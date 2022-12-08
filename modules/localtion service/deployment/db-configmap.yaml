@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  KAFKA_URL: localhost:9092
+  KAFKA_TOPIC: kafka_producer_q
+metadata:
+  name: config-location-producer-map
