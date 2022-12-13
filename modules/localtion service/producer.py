@@ -5,10 +5,16 @@ import grpc
 import location_pb2
 import location_pb2_grpc
 import json
+import logging
+import os
 
-TOPIC_NAME="kafka_producer_q"
-KAFKA_SERVER='localhost:9092'
+#TOPIC_NAME="kafka_producer_q"
+#KAFKA_SERVER='localhost:9092'
 
+kafka_url = os.environ["KAFKA_URL"]
+kafka_topic = os.environ["KAFKA_TOPIC"]
+logging.info('connecting to kafka ', kafka_url)
+logging.info('connecting to kafka topic ', kafka_topic)
 
 class locationservicer(location_pb2_grpc.Location_ServiceServicer):
     
@@ -16,7 +22,7 @@ class locationservicer(location_pb2_grpc.Location_ServiceServicer):
         
         print("printing request")
         print(request)
-        producer = kafka.KafkaProducer(bootstrap_servers=KAFKA_SERVER)
+        producer = kafka.KafkaProducer(bootstrap_servers=kafka_url)
         request_value={
             "userId":request.userId,
             "latitude":request.latitude,
@@ -26,7 +32,7 @@ class locationservicer(location_pb2_grpc.Location_ServiceServicer):
 
         encoded_data = json.dumps(request_value, indent=2).encode('utf-8')
 
-        producer.send(TOPIC_NAME,encoded_data)
+        producer.send(kafka_topic,encoded_data)
         
         return location_pb2.LocationtMessage(**request_value)
 
