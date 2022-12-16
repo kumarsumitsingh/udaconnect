@@ -1,0 +1,7 @@
+Person mcroservice is a RESTFul API service responsible for keeping customer information.
+Connection microservice gets data from Person microservice through RESTFul API.
+Here ,we separate Location service into location  producer microservice and location consumer microservice.  
+location event producer microservice produces user location sent from mobiles devices. By using gRPC
+which will be efficient and match the requirement of processing a lot of users data concurrently.
+In the location  producer microservice has a Kafka cluster that receives this location data which will be consumed by location consumer microservice.
+and this data will be stored in postgres database. Location event producer microservice is the service that interacts through a RESTFul API with the React Frontend.

@@ -1,0 +1,27 @@
+{
+	"info": {
+		"_postman_id": "440a60a2-68ba-4ef3-a2fa-040bc00f9c5d",
+		"name": "udaconnect_postman collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "person api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "connection api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

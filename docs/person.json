@@ -1,0 +1,43 @@
+openapi: 3.0.1
+info:
+  title: persons
+  description: defaultDescription
+  version: v1.0
+servers:
+  - url: http://localhost:30002
+paths:
+  /api/persons:
+    get:
+      description: Auto generated using Swagger Inspector
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                '0':
+                  value: >
+                    [{"first_name": "Taco", "id": 5, "company_name": "Alpha
+                    Omega Upholstery", "last_name": "Fargo"}, {"first_name":
+                    "Frank", "id": 6, "company_name": "USDA", "last_name":
+                    "Shader"}, {"first_name": "Pam", "id": 1, "company_name":
+                    "Hampton, Hampton and McQuill", "last_name": "Trexler"},
+                    {"first_name": "Paul", "id": 8, "company_name": "Paul Badman
+                    & Associates", "last_name": "Badman"}, {"first_name":
+                    "Otto", "id": 9, "company_name": "The Chicken Sisters
+                    Restaurant", "last_name": "Spring"}]
+      servers:
+        - url: http://localhost:30002
+    servers:
+      - url: http://localhost:30002
+components:
+  schemas:
+    Schema:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64

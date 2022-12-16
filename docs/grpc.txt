@@ -1,0 +1,8 @@
+GRPC documentation of location  producer service. Please see modules/location event producer service/client.py to know how to make a sample request.
+The client.py will send request to location event producer service through Protobuf message use gRPC for efficiently transporting structured data as the following location_event.proto. 
+
+message LocationtMessage {
+    int32 userId = 1;
+    int32 latitude = 2;
+    int32 longitude = 3;
+  }
