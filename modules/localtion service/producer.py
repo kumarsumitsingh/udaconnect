@@ -8,8 +8,7 @@ import json
 import logging
 import os
 
-#TOPIC_NAME="kafka_producer_q"
-#KAFKA_SERVER='localhost:9092'
+
 
 kafka_url = os.environ["KAFKA_URL"]
 kafka_topic = os.environ["KAFKA_TOPIC"]
@@ -52,14 +51,3 @@ except KeyboardInterrupt:
     server.stop(0)
 
 
-
-#Kafka
-#channel = grpc.insecure_channel("localhost:5005")
-#stub=location_pb2_grpc.Location_ServiceStub(channel)
-#location=location_pb2.locationMessage()
-#TOPIC_NAME = 'items'
-#KAFKA_SERVER = 'localhost:9092'
-#producer = KafkaProducer(bootstrap_servers=KAFKA_SERVER)
-
-#producer.send(TOPIC_NAME, b'Test Message!!!')
-#producer.flush() 
